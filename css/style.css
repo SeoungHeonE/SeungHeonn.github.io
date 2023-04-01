@@ -1,0 +1,273 @@
+/********************************************************
+                        초기화
+********************************************************/
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/********************************************************
+                        header
+********************************************************/
+
+header {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.301);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+header h1 {
+    font-family: 'Alkatra', cursive;
+    margin-left: 10%;
+    margin-right: -5%;
+    display: inline-block;
+}
+
+h1:nth-of-type(2) {
+    font-family: 'Alkatra', cursive;
+}
+
+h1:nth-of-type(3) {
+    font-family: 'Alkatra', cursive;
+}
+
+header.over {
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+header.over h1 a {
+    color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(218, 48, 48) !important;
+}
+
+
+/********************************************************
+                    arrow down
+********************************************************/
+
+.arrow {
+    position: relative;
+    top: 86%;
+    bottom: -2rem;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+
+    /* arrow image */
+    background-image: url(https://cdn-icons-png.flaticon.com/512/32/32195.png);
+    background-size: contain;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/********************************************************
+                    section bg
+********************************************************/
+
+
+
+section {
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+}
+
+section:nth-of-type(1) {
+    background-image: url(https://images.unsplash.com/photo-1532912488546-793a72bd7e1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* (evrn) 짝수번째를 선택 */
+section:nth-of-type(3) {
+    background-image: url(https://images.unsplash.com/photo-1574023597990-54ef72ee33be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/********************************************************
+                    section 2
+********************************************************/
+
+
+#fade-image {
+    margin-top: 12%;
+    margin-left: 12%;
+    width: 24%;
+    /* border-radius: 50%; */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateX(-50px);
+    /* 왼쪽으로 50px 이동 */
+}
+
+#fade-image.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+    /* 원래 위치로 이동 */
+}
+
+#section2 p {
+    color: #fff;
+    margin-left: 60%;
+    margin-top: -14%;
+    font-family: 'Alkatra', cursive;
+    font-size: 60px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#section2 p.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#section2 p:hover  {
+    color: #29a1aa;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* 버튼 클릭 시 스무스하게 */
+}
+/********************************************************
+                    section 2
+********************************************************/
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container h1 {
+    font-size: 40px;
+}
+
+#playlist {
+    position: relative;
+}
+
+#playlist h1 {
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+/* 스크롤 시 텍스트 노출 */
+#playlist h1 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#playlist h1.visible {
+    opacity: 1;
+}
+
+/* 화살표 */
+#arrow {
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#playlist h1:hover #arrow {
+    opacity: 1;
+}
+
+
+/********************************************************
+                        Top 버튼
+********************************************************/
+
+#topBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 40px;
+    display: block;
+    /* 변경된 부분 */
+    color: #000;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: opacity 0.4s ease-in-out;
+    /* 버튼 스무스하게 */
+}
+
+#topBtn:hover {
+    color: #a01212;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* 버튼 클릭 시 스무스하게 */
+}
+
+#topBtn.hidden {
+    opacity: 0;
+}
+
+#topBtn.white {
+    color: #fff;
+}
+
+#topBtn.white:hover {
+    color: #a01212;
+}
+
+/********************************************************
+                        footer
+********************************************************/
+
+footer {
+    background-color: rgb(27, 27, 27);
+    height: 100px;
+}
